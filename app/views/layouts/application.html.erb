@@ -7,8 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+<div class="nav">
+		<% if current_user %>
+			<%= link_to "#{current_user.name} dashboard", dashboard_path %>&nbsp;
+			<%= link_to "Sign Out", signout_path %>.
+		<% else %>
+			<%= link_to "Sign in with Twitter", signintwitter_path, :class => "btn-auth btn-twitter" %>
+			
+		<% end %>
+</div>
+<div class="grater-container content">
+	<%= yield %>
+</div>
 
 </body>
 </html>

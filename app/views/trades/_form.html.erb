@@ -1,0 +1,22 @@
+<div class="grater">
+	<div>
+	<%= simple_form_for @trade do |f| %>
+		<%= f.error_notification %>
+		<h3>S'plain it..</h3>
+		<%= f.input :title, :label => "What are you Trading?" %>
+		<%= f.input :desc, :label => "Explain what you want to accomplish" %>
+	</div>
+	<div>
+		<h3>Who will like this trade best?</h3>
+		<p><%= f.input :designer %></p>
+		<p><%= f.input :developer %></p>	
+		<p><%= f.input :others %></p>
+		<hr />
+		<h3>Upload a Picture</h3>
+		<p><%= f.input :image, :label => "Choose Image", :style => "padding:5px" %></p>
+		<hr />
+		<h3>Create this monkay</h3>
+		<p><%= f.button :submit, :class => "title" %></p>
+	<% end %>
+	</div>
+</div>	

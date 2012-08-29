@@ -1,0 +1,27 @@
+<div class="grater" style="margin-top:20px;">
+	<h1><span style="background:#000;"><%= link_to '+ new trade', new_trade_path, :class => "addnew" %></span>&nbsp;<span style="background:#000;"><%= link_to 'Dashboard', dashboard_path, :class => "addnew" %></span><%= image_tag(current_user.image.to_s, :class => "dimm img-circle", :style => "float:right;") %></h1>
+</div>
+<div class="grater">
+<% @trades.each do |trade| %>
+  <p class="title"><%= link_to trade.title, trade, :class => "title" %></p>
+  <p><span class="bodytext"><%= trade.desc %></span></p>
+  <p><%= image_tag(trade.image_url, :class => "feed-images") if trade.image? %></p>
+  <p>  
+ 	<% if trade.developer? %>
+	<a class="developers" href="#"><span style="background:#fea700;padding:3px;">Developers</span></a>
+	<% end %>
+    <% if trade.designer? %>
+	<a class="designers" href="#"><span style="background:#399dd8;padding:3px;">Designers</span></a>
+	<% end %>
+    <% if trade.others? %>
+	<a class="other" href="#"><span style="background:#f2217c;padding:3px;">Other</span></a>
+
+	<% end %>
+  </p>
+  <h6>Created <%= time_ago_in_words(trade.created_at) %> ago by <%= link_to trade.user_id, trade %></h6>
+
+<% end %>
+</div>
+<div class="grater">
+	<%= will_paginate @trades %>
+</div>

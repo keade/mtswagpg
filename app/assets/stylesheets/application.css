@@ -9,5 +9,31 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require grater
  *= require_tree .
  */
+@import url(http://fonts.googleapis.com/css?family=Advent+Pro);
+body{font-family: 'Advent Pro', sans-serif;text-transform:uppercase;}
+.content{color:#333;padding:10px;}
+.nav{background:#eee;border:1px solid #ddd;border-radius:0px 0px 5px 5px;padding:5px;position:fixed;top:0px;width:auto;}
+.dimm{opacity:0.5;margin-left:-3px;}
+.dimm:hover{opacity:1;}
+.img-circle {-webkit-border-radius: 500px;-moz-border-radius: 500px;border-radius: 500px;}
+/*html{background:url('k2-8611m-pakistan.jpeg') no-repeat center center fixed;background-size:cover;-o-background-size:cover;-moz-background-size:cover;-webkit-background-size:cover;}
+*/
+.developers{text-decoration:none;color:#fff;padding:3px;}
+.designers{text-decoration:none;color:#fff;padding:3px;}
+.other{text-decoration:none;color:#fff;padding:3px;}
+.addnew{text-decoration:none;padding:10px;color:#fff;}
+.title{text-decoration:none;padding:5px;background:#333;color:#eee;}
+.title:hover{background:#444;color:#fff;}
+.feed-images{max-width:620px;}
+.home-images{width:120px;height:120px;}
+.btn{border:none;}
+.pagination{background:#333;color:#fff;}
+.pagination a{color:#fff;padding:2px;text-decoration:none;}
+.pagination a:hover{color:#333;background:#ddd;padding:5px;}
+.current{padding:5px;color:#F2217C;}
+.bodytext{background:#eee;}
+
+@media all and (max-width: 660px){.feed-images{max-width:300px;}

@@ -1,0 +1,24 @@
+<div class="grater">
+	<h2><span style="background:#000;color:#fff;padding:5px;">mt. swag</span></h2>
+	<h5><span style="background:#000;color:#fff;padding:5px;">Elevation: <%= @users.count %> m (<%= sprintf("%.1f",@users.count * 2.2) %> ft)</span></h5>
+</div>
+<div class="grater">
+	<div>
+		<h3>What is Mt. Swag?</h3>
+		<p>startups, developers and designers love just one thing, more than beta invites...</p>
+		<%= image_tag('P1020415.jpeg', :class=> "img-circle dimm")%>
+		<p>Mt. Swag is a simple network to trade your startup (or company) swag with those who love your brand, idea, team, design, or whatever the reason is.</p>
+	</div>
+	<div>
+		<h3>Current Climbers</h3>
+	<% @users.each do |user| %>
+		<img src="<%= user.image %>" class="dimm" />
+	<% end %>
+	</div>
+</div>
+<div class="grater">
+	<h3>Whats being traded?</h3>
+	<% @trades.each do |trade| %>
+		<%= image_tag(trade.image_url, :class => "home-images") if trade.image? %>
+	<% end %>
+</div>

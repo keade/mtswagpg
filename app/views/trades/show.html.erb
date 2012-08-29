@@ -1,0 +1,17 @@
+<h1><span style="background:#000;"><%= link_to '<- Feed', trades_path, :class => "addnew" %></span><%= image_tag(current_user.image.to_s, :class => "dimm img-circle", :style => "float:right;") %></h1>
+
+<p class="title"><%= @trade.title %></p>
+  <p><%= image_tag(@trade.image_url, :class => "feed-images") if @trade.image? %></p>
+  <p>  
+ 	<% if @trade.developer? %>
+	<a class="developers" href="#"><span style="background:#fea700;padding:3px;">Developers</span></a>
+	<% end %>
+    <% if @trade.designer? %>
+	<a class="designers" href="#"><span style="background:#399dd8;padding:3px;">Designers</span></a>
+	<% end %>
+    <% if @trade.others? %>
+	<a class="other" href="#"><span style="background:#f2217c;padding:3px;">Other</span></a>
+	<% end %>
+  </p>
+  <h6>Created <%= time_ago_in_words(@trade.created_at) %> ago</h6>
+    <%= link_to 'Show', @trade %>&nbsp;<%= link_to 'Edit', edit_trade_path(@trade) %>&nbsp;<%= link_to 'Destroy', @trade, method: :delete, data: { confirm: 'Are you sure?' } %>

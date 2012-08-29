@@ -6,6 +6,13 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'omniauth-twitter'
+gem 'omniauth-github'
+gem 'grater'
+gem 'carrierwave'
+gem 'simple_form'
+gem 'will_paginate', '~> 3.0'
+gem 'cancan'
 
 
 # Gems used only for assets and not required
